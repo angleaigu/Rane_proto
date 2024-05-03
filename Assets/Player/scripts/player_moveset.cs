@@ -21,6 +21,10 @@ public class player_moveset : MonoBehaviour
 
     private bool _IsGrounded;
 
+    //
+    [SerializeField] int CoinNumber =0;
+
+
     void Awake()
     {
         _player_manager = new Player_manager();
@@ -38,7 +42,7 @@ public class player_moveset : MonoBehaviour
         _Jump.Enable();
 
         _Jump.performed += On_Jump;
-        _Jump.canceled += Saute_plus_fdp_ta_grosse_mere_la_pute_le_caveau_de_tes_morts;
+        _Jump.canceled += Cancel_Jump;
         _Move.performed += On_Move;
 
         Ground_Check_Position = transform.Find("Overlap_Jump").GetComponent<Transform>();
@@ -99,12 +103,12 @@ public class player_moveset : MonoBehaviour
 
     private void On_Move(InputAction.CallbackContext context)
     {
-        Debug.Log("ça marche grognasse");
+        Debug.Log("ça marche <3");
     }
 
     private void On_Jump(InputAction.CallbackContext context)
     {
-        Debug.Log("il saute ce gros fils de pute vert");
+        Debug.Log("il saute :)");
 
         if (_IsGrounded)
         {
@@ -113,7 +117,7 @@ public class player_moveset : MonoBehaviour
             
     }
 
-    private void Saute_plus_fdp_ta_grosse_mere_la_pute_le_caveau_de_tes_morts(InputAction.CallbackContext context)
+    private void Cancel_Jump(InputAction.CallbackContext context)
     {
         if (_rigidbody2D.velocity.y > 0.01)
         {
