@@ -21,8 +21,8 @@ public class player_moveset : MonoBehaviour
 
     private bool _IsGrounded;
 
-    //
-    [SerializeField] int CoinNumber =0;
+
+    //[SerializeField] int CoinNumber =0;
 
 
     void Awake()
@@ -145,6 +145,8 @@ public class player_moveset : MonoBehaviour
 
 
     }
+
+ 
 
 
 }
